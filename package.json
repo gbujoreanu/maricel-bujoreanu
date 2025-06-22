@@ -4,7 +4,8 @@
   "description": "This repository contains the source code for Maricel Bujoreanu's portfolio website. The site can be served as a static site or run from an Express server once Node.js dependencies are added.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
