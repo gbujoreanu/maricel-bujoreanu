@@ -1,19 +1,25 @@
 // Load header and footer
+const scriptSrc = document.currentScript.getAttribute('src');
+const basePath = scriptSrc.replace(/assets\/js\/includes\.js$/, '');
+
 function loadHTML(selector, file) {
-  fetch(file)
+  fetch(basePath + file)
     .then(response => {
       if (!response.ok) throw new Error("Network response was not ok");
       return response.text();
     })
     .then(data => {
       document.querySelector(selector).innerHTML = data;
-      if (selector === '#header') setupMenuToggle(); // Setup toggle only after header loads
+      if (selector === '#header') {
+        prefixNavLinks();
+        setupMenuToggle(); // Setup toggle only after header loads
+      }
     })
     .catch(error => console.error(`Could not load ${file}:`, error));
 }
 
-loadHTML("#header", "/assets/partials/header.html");
-loadHTML("#footer", "/assets/partials/footer.html");
+loadHTML("#header", "assets/partials/header.html");
+loadHTML("#footer", "assets/partials/footer.html");
 
 function setupMenuToggle() {
   const toggle = document.querySelector(".menu-toggle");
@@ -58,6 +64,16 @@ function setupMenuToggle() {
     if (window.innerWidth > 768) {
       navLinks.classList.remove('show');
       dropdowns.forEach(d => d.classList.remove('open'));
+    }
+  });
+}
+
+function prefixNavLinks() {
+  const links = document.querySelectorAll('.nav-links a[href]');
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+      link.setAttribute('href', basePath + href);
     }
   });
 }
