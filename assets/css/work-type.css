@@ -1,0 +1,53 @@
+.work-type-intro {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.work-type-intro h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.work-type-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.work-gallery {
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.work-gallery h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.image-card {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.image-card p {
+  font-size: 0.95rem;
+  color: #333;
+}

@@ -1,0 +1,70 @@
+.hero {
+    background: #e0e0e0;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  
+  .hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-button {
+    background-color: #003049;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .cta-button:hover {
+    background-color: #005f73;
+  }
+  
+  /* Services Section */
+  .services {
+    padding: 2rem 1rem;
+  }
+  
+  .services h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .service-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .service-item {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+  }
+  
+  .service-item h4 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .service-item a {
+    color: #003049;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .service-item a:hover {
+    text-decoration: underline;
+  }
+  
