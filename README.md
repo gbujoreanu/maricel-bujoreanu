@@ -24,7 +24,25 @@ This repository contains the source code for Maricel Bujoreanu's portfolio websi
      npm start
      ```
 
-   - The site will be available at `http://localhost:3000` by default.
+    - The site will be available at `http://localhost:3000` by default.
+
+## Contact Form Email Setup
+
+The contact form now uses [Nodemailer](https://nodemailer.com/) to forward
+messages. Create a `.env` file in the project root with your mail service
+credentials:
+
+```env
+EMAIL_HOST=smtp.yourprovider.com
+EMAIL_PORT=465
+EMAIL_SECURE=true        # true for port 465, false for 587
+EMAIL_USER=your_account@example.com
+EMAIL_PASS=your_password
+EMAIL_TO=destination@example.com
+```
+
+Start the server after configuring these variables and form submissions will be
+emailed to `EMAIL_TO`.
 
 ## Deployment
 
