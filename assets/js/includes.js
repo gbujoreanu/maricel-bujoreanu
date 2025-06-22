@@ -35,9 +35,7 @@ function setupMenuToggle() {
       if (window.innerWidth <= 768) {
         e.preventDefault();
         const isOpen = dropdown.classList.contains('open');
-        // Close all other dropdowns first
         dropdowns.forEach(d => d.classList.remove('open'));
-        // Toggle current one
         if (!isOpen) {
           dropdown.classList.add('open');
         }
@@ -52,6 +50,14 @@ function setupMenuToggle() {
       if (!isClickInside) {
         document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
       }
+    }
+  });
+
+  // Reset menu state when resizing to desktop
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) {
+      navLinks.classList.remove('show');
+      dropdowns.forEach(d => d.classList.remove('open'));
     }
   });
 }

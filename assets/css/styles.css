@@ -203,6 +203,11 @@ main {
     text-align: left;
   }
 
+  /* Disable hover open behavior on small screens */
+  .dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
   
 
   .dropdown.open .dropdown-menu {
