@@ -1,5 +1,5 @@
 // Load header and footer
-function loadHTML(selector, file) {
+function loadHTML(selector, file, callback) {
   fetch(file)
     .then(response => {
       if (!response.ok) throw new Error("Network response was not ok");
@@ -7,16 +7,27 @@ function loadHTML(selector, file) {
     })
     .then(data => {
       document.querySelector(selector).innerHTML = data;
-      if (selector === '#header') setupMenuToggle(); // Setup toggle only after header loads
+      if (callback) callback();
     })
     .catch(error => console.error(`Could not load ${file}:`, error));
 }
 
 const scriptPath = document.currentScript.getAttribute('src');
 const basePath = scriptPath.replace(/js\/includes\.js(?:\?.*)?$/, '');
+const rootPath = basePath.replace(/assets\/?$/, '');
 
-loadHTML("#header", `${basePath}partials/header.html`);
+loadHTML("#header", `${basePath}partials/header.html`, () => {
+  updateNavLinks(rootPath);
+  setupMenuToggle();
+});
 loadHTML("#footer", `${basePath}partials/footer.html`);
+
+function updateNavLinks(prefix) {
+  document.querySelectorAll('#header a[data-href]').forEach(link => {
+    const page = link.getAttribute('data-href');
+    link.setAttribute('href', `${prefix}${page}`);
+  });
+}
 
 function setupMenuToggle() {
   const toggle = document.querySelector('.menu-toggle');
