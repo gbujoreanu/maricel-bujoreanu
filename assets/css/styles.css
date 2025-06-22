@@ -206,6 +206,8 @@ main {
   /* Disable hover open behavior on small screens */
   .dropdown:hover .dropdown-menu {
     display: none;
+    opacity: 0;
+    visibility: hidden;
   }
 
   
