@@ -204,9 +204,13 @@ main {
     text-align: left;
   }
 
-  /* Remove hover styles for links in the mobile hamburger menu */
+  /* Remove hover-like styles for links in the mobile hamburger menu */
   .nav-menu a:hover,
-  .dropdown-menu a:hover {
+  .nav-menu a:focus,
+  .nav-menu a:active,
+  .dropdown-menu a:hover,
+  .dropdown-menu a:focus,
+  .dropdown-menu a:active {
     text-decoration: none;
     background-color: inherit;
   }
