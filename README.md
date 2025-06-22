@@ -18,13 +18,13 @@ This repository contains the source code for Maricel Bujoreanu's portfolio websi
      This will install the packages listed in `package.json` once the project uses Node/Express.
 
 3. **Start the local server**
-   - After installing dependencies, start the development server with:
+   - After installing dependencies, start the Express server with:
 
      ```bash
      npm start
      ```
 
-   - If a specific script is provided (for example `node server.js`), adjust the command accordingly. The server will typically run at `http://localhost:3000`.
+   - The site will be available at `http://localhost:3000` by default.
 
 ## Deployment
 

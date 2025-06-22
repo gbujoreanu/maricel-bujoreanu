@@ -19,6 +19,12 @@
 
         <a href="mailto:mbujoreanu@yahoo.com?subject=Quote%20Request&body=Hi%2C%20I%27m%20interested%20in%20your%20contracting%20services..." class="cta-button">Send Me an Email</a>
 
+        <form id="contact-form" action="/contact" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
 
         <div class="contact-info">
           <p><strong>Phone:</strong> (864) 590-2698</p>
