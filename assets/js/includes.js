@@ -22,6 +22,11 @@ function setupMenuToggle() {
   const toggle = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
 
+  // Ensure menu starts closed when the header loads
+  if (navLinks) {
+    navLinks.classList.remove("show");
+  }
+
   if (toggle && navLinks) {
     toggle.addEventListener("click", () => {
       navLinks.classList.toggle("show");
