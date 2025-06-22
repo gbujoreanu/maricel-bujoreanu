@@ -12,8 +12,11 @@ function loadHTML(selector, file) {
     .catch(error => console.error(`Could not load ${file}:`, error));
 }
 
-loadHTML("#header", "/assets/partials/header.html");
-loadHTML("#footer", "/assets/partials/footer.html");
+const scriptPath = document.currentScript.getAttribute('src');
+const basePath = scriptPath.replace(/js\/includes\.js(?:\?.*)?$/, '');
+
+loadHTML("#header", `${basePath}partials/header.html`);
+loadHTML("#footer", `${basePath}partials/footer.html`);
 
 function setupMenuToggle() {
   const toggle = document.querySelector(".menu-toggle");
