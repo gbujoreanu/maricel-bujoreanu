@@ -30,6 +30,9 @@ function setupMenuToggle() {
   if (toggle && navLinks) {
     toggle.addEventListener("click", () => {
       navLinks.classList.toggle("show");
+      if (!navLinks.classList.contains("show")) {
+        document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+      }
     });
   }
 

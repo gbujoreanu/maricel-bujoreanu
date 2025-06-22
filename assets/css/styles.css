@@ -215,6 +215,8 @@ main {
 
   .dropdown.open .dropdown-menu {
     display: block;
+    opacity: 1;
+    visibility: visible;
   }
 
   .site-title {
